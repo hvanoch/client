@@ -45,6 +45,16 @@ class ClientSession extends AbstractSession
     }
 
     /**
+     * Unsubscribe
+     *
+     * @param string $subscriptionId
+     * @return Promise
+     */
+    public function unsubscribe($subscriptionId)
+    {
+        return $this->peer->getSubscriber()->unsubscribe($this, $subscriptionId);
+    }
+    /**
      * Publish
      *
      * @param string $topicName
